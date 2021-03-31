@@ -1,25 +1,31 @@
 {
   "extends": [
-      "eslint:recommended",
-      "plugin:import/errors",
-      "plugin:react/recommended",
-      "plugin:jsx-a11y/recommended",
-      "prettier",
-      "prettier/react"
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier",
+    "prettier/react"
   ],
   "rules": {
     // 0: off 1:warn 2:error
     "react/prop-types": 0,
     "no-console": 1,
     "react-hooks/rules-of-hooks": 2,
-    "react-hooks/exhaustive-deps": 1
+    "react-hooks/exhaustive-deps": 1,
+    "no-unused-vars": 0,
+    "unused-imports/no-unused-imports-ts": 2,
+    "unused-imports/no-unused-vars-ts": [
+      1,
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ]
   },
-  "plugins": [
-    "react",
-    "import",
-    "jsx-a11y",
-    "react-hooks"
-  ],
+  "plugins": ["react", "import", "jsx-a11y", "react-hooks", "unused-imports"],
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module",
