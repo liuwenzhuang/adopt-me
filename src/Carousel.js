@@ -38,7 +38,7 @@ class Carousel extends React.Component {
             return (
               // eslint-disable-next-line
               <img
-                key={photo}
+                key={photo + index}
                 src={photo}
                 className={index === active ? "active" : ""}
                 alt="animal thumbnail"

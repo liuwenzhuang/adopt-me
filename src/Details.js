@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import pet from "@frontendmasters/pet";
 import { useParams } from "@reach/router";
 import Carousel from "./Carousel";
+import ErrorBoundary from "./ErrorBoundary";
 
 const Details = () => {
   const [loading, setLoading] = useState(true);
@@ -39,4 +40,10 @@ const Details = () => {
   );
 };
 
-export default Details;
+export default function DetailsWithErrorBoundary(props) {
+  return (
+    <ErrorBoundary>
+      <Details {...props} />
+    </ErrorBoundary>
+  );
+}
